@@ -18,7 +18,7 @@ We are using bastion as our EKS client, so it will have
 * Make sure MySQL instance allows port no 3306 from bastion
 
 ```
-mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboShop1
+mysql -h mysql-dev.anuprasad.online -u root -pRoboShop1
 ```
 * Clone shipping component into bastion
 ```
@@ -26,13 +26,13 @@ git clone https://github.com/daws-81s/shipping.git
 ```
 * Load the data into mysql
 ```
-mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboShop1 < shipping/db/schema.sql
+mysql -h mysql-dev.anuprasad.online -u root -pRoboShop1 < shipping/db/schema.sql
 ```
 ```
-mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboShop1 < shipping/db/app-user.sql
+mysql -h mysql-dev.anuprasad.online -u root -pRoboShop1 < shipping/db/app-user.sql
 ```
 ```
-mysql -h roboshop-dev.czn6yzxlcsiv.us-east-1.rds.amazonaws.com -u root -pRoboShop1 < shipping/db/master-data.sql
+mysql -h mysql-dev.anuprasad.online -u root -pRoboShop1 < shipping/db/master-data.sql
 ```
 
 ## Target group binding
