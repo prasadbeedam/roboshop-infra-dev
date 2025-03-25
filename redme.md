@@ -60,6 +60,7 @@ kubectl get nodes
 * Create namespace roboshop
 ```
 kubectl create namespace roboshop
+
 ```
 
 eksctl utils associate-iam-oidc-provider \
@@ -71,6 +72,7 @@ eksctl utils associate-iam-oidc-provider \
 
 ```
 curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.2.1/docs/install/iam_policy.json
+
 ```
 
 * IAM Role created
@@ -78,8 +80,10 @@ curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-lo
 aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam-policy.json
+
 ```
 * Create Service account. Replace your account ID.
+
 ```
 eksctl create iamserviceaccount \
 --cluster=roboshop-dev \
@@ -95,13 +99,21 @@ eksctl create iamserviceaccount \
 
 ```
 helm repo add eks https://aws.github.io/eks-charts
+
 ```
 
 ```
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=roboshop-dev --set serviceAccount.create=true --set serviceAccount.name=aws-load-balancer-controller
+
 ```
 
 * Make sure load balancer pods are running
+
+''''''''
+if failed run below 
+.....
+
+kubectl delete serviceaccount aws-load-balancer-controller -n kube-system
 
 ```
 kubectl get pods -n kube-system
