@@ -128,9 +128,9 @@ kube-proxy-8zb7z                                1/1     Running   0          6m5
 
 
 
-
+```
 if failed run below 
-
+```
 
 
 
