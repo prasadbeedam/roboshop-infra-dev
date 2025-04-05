@@ -115,6 +115,11 @@ if failed run below
 
 kubectl delete serviceaccount aws-load-balancer-controller -n kube-system
 
+
+
+
+
+
 ```
 kubectl get pods -n kube-system
 NAME                                            READY   STATUS    RESTARTS   AGE
