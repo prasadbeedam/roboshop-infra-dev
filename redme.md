@@ -109,7 +109,6 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 
 * Make sure load balancer pods are running
 
-''''''''
 ```
 
 
@@ -126,12 +125,13 @@ eks-pod-identity-agent-9ngdt                    1/1     Running   0          5m1
 eks-pod-identity-agent-cj98g                    1/1     Running   0          5m17s
 kube-proxy-7sgw7                                1/1     Running   0          6m4s
 kube-proxy-8zb7z                                1/1     Running   0          6m5s
-```
+
+
 
 
 if failed run below 
 
 
-.....
+
 
 kubectl delete serviceaccount aws-load-balancer-controller -n kube-system
